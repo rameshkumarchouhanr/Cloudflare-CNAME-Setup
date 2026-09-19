@@ -1,5 +1,41 @@
 <?php
-class CloudFlare {
+class CloudFlare {<?php
+// मान लीजिए HOST_KEY और कुकीज़ पहले से सेट हैं
+$cf = new CloudFlare();
+
+$zone_name = "blog.com"; // आपका रूट डोमेन या मुख्य डोमेन
+$resolve_to = "aasapuratech.github.io"; // जहाँ आपका साइट होस्ट है (जैसे GitHub Pages)
+$subdomains = "aasapuratech"; // आपका सबडोमेन नाम
+
+// Cloudflare में CNAME सेटअप करने के लिए
+$response = $cf->zoneSet($zone_name, $resolve_to, $subdomains);
+
+if ($response) {
+    echo "डोमेन सफलतापूर्वक जोड़ दिया गया है!";
+    print_r($response);
+} else {
+    echo "डोमेन जोड़ने में त्रुटि ہوئی۔";
+}<?php
+// मान लीजिए HOST_KEY और कुकीज़ पहले से सेट हैं
+$cf = new CloudFlare();
+
+$zone_name = "blog.com"; // आपका रूट डोमेन या मुख्य डोमेन
+$resolve_to = "aasapuratech.github.io"; // जहाँ आपका साइट होस्ट है (जैसे GitHub Pages)
+$subdomains = "aasapuratech"; // आपका सबडोमेन नाम
+
+// Cloudflare में CNAME सेटअप करने के लिए
+$response = $cf->zoneSet($zone_name, $resolve_to, $subdomains);
+
+if ($response) {
+    echo "डोमेन सफलतापूर्वक जोड़ दिया गया है!";
+    print_r($response);
+} else {
+    echo "डोमेन जोड़ने में त्रुटि ہوئی۔";
+}
+?>
+
+?>
+
 	/**
 	 * Sent a post to Cloudflare Partner API
 	 * @param $data
